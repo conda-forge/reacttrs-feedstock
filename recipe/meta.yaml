@@ -1,5 +1,5 @@
 {% set name = "reacttrs" %}
-{% set version = "0.1.4" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 811110153ec1523d878ad7344f362fc77f8fd3a971dbf31687159557de397385
+  sha256: 478f83e35f0d3649d1b1c3059aa07dfde9291f865fcc576277e8f4d8b2d882f2
 
 build:
   noarch: python
