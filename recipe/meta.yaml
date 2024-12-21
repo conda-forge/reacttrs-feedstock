@@ -6,27 +6,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 6a2cbf7a209deb0be056cc30e7c7c5f1ff5a744cba18c427d5418cc32bb1e53c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - hatchling
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
     - reacttrs
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
